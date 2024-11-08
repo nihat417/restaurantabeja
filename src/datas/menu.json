@@ -1,0 +1,155 @@
+{
+    "fastFoodCategories": [
+      {
+        "category": "Burgers",
+        "items": [
+          {
+            "name": "Cheeseburger",
+            "price": 2.99,
+            "image": "https://example.com/images/cheeseburger.jpg"
+          },
+          {
+            "name": "Hamburger",
+            "price": 2.49,
+            "image": "https://example.com/images/hamburger.jpg"
+          },
+          {
+            "name": "Chicken Burger",
+            "price": 3.49,
+            "image": "https://example.com/images/chickenburger.jpg"
+          },
+          {
+            "name": "Double Burger",
+            "price": 4.99,
+            "image": "https://example.com/images/doubleburger.jpg"
+          },
+          {
+            "name": "Vegan Burger",
+            "price": 3.99,
+            "image": "https://example.com/images/veganburger.jpg"
+          }
+        ]
+      },
+      {
+        "category": "Pizza",
+        "items": [
+          {
+            "name": "Margherita",
+            "price": 5.99,
+            "image": "https://example.com/images/margherita.jpg"
+          },
+          {
+            "name": "Pepperoni",
+            "price": 6.49,
+            "image": "https://example.com/images/pepperoni.jpg"
+          },
+          {
+            "name": "Four Cheese",
+            "price": 6.99,
+            "image": "https://example.com/images/fourcheese.jpg"
+          },
+          {
+            "name": "Hawaiian",
+            "price": 6.49,
+            "image": "https://example.com/images/hawaiian.jpg"
+          },
+          {
+            "name": "Vegetarian",
+            "price": 5.99,
+            "image": "https://example.com/images/vegetarian.jpg"
+          }
+        ]
+      },
+      {
+        "category": "Hot Dogs",
+        "items": [
+          {
+            "name": "Classic Hot Dog",
+            "price": 1.99,
+            "image": "https://example.com/images/classichotdog.jpg"
+          },
+          {
+            "name": "Chili Dog",
+            "price": 2.49,
+            "image": "https://example.com/images/chilidog.jpg"
+          },
+          {
+            "name": "Cheese Dog",
+            "price": 2.29,
+            "image": "https://example.com/images/cheesedog.jpg"
+          },
+          {
+            "name": "Corn Dog",
+            "price": 1.79,
+            "image": "https://example.com/images/corndog.jpg"
+          },
+          {
+            "name": "Bacon Hot Dog",
+            "price": 2.99,
+            "image": "https://example.com/images/baconhotdog.jpg"
+          }
+        ]
+      },
+      {
+        "category": "Tortilla and Tacos",
+        "items": [
+          {
+            "name": "Beef Taco",
+            "price": 3.49,
+            "image": "https://example.com/images/beeftaco.jpg"
+          },
+          {
+            "name": "Chicken Taco",
+            "price": 3.29,
+            "image": "https://example.com/images/chickentaco.jpg"
+          },
+          {
+            "name": "Quesadilla",
+            "price": 3.99,
+            "image": "https://example.com/images/quesadilla.jpg"
+          },
+          {
+            "name": "Burrito",
+            "price": 4.49,
+            "image": "https://example.com/images/burrito.jpg"
+          },
+          {
+            "name": "Enchilada",
+            "price": 4.29,
+            "image": "https://example.com/images/enchilada.jpg"
+          }
+        ]
+      },
+      {
+        "category": "Chicken Dishes",
+        "items": [
+          {
+            "name": "Nuggets",
+            "price": 2.49,
+            "image": "https://example.com/images/nuggets.jpg"
+          },
+          {
+            "name": "Wings",
+            "price": 3.99,
+            "image": "https://example.com/images/wings.jpg"
+          },
+          {
+            "name": "Strips",
+            "price": 3.79,
+            "image": "https://example.com/images/strips.jpg"
+          },
+          {
+            "name": "Chicken Sandwich",
+            "price": 4.29,
+            "image": "https://example.com/images/chickensandwich.jpg"
+          },
+          {
+            "name": "Fried Chicken Legs",
+            "price": 3.49,
+            "image": "https://example.com/images/friedchickenlegs.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  
