@@ -1,7 +1,9 @@
 {
     "fastFoodCategories": [
       {
+        "id": 1,
         "category": "Burgers",
+        "image": "https://example.com/images/cheeseburger.jpg",
         "items": [
           {
             "name": "Cheeseburger",
@@ -31,7 +33,9 @@
         ]
       },
       {
+        "id": 2,
         "category": "Pizza",
+        "image": "https://example.com/images/cheeseburger.jpg",
         "items": [
           {
             "name": "Margherita",
@@ -61,7 +65,9 @@
         ]
       },
       {
+        "id": 3,
         "category": "Hot Dogs",
+        "image": "https://example.com/images/cheeseburger.jpg",
         "items": [
           {
             "name": "Classic Hot Dog",
@@ -91,7 +97,9 @@
         ]
       },
       {
+        "id": 4,
         "category": "Tortilla and Tacos",
+        "image": "https://example.com/images/cheeseburger.jpg",
         "items": [
           {
             "name": "Beef Taco",
@@ -121,7 +129,9 @@
         ]
       },
       {
+        "id": 5,
         "category": "Chicken Dishes",
+        "image": "https://example.com/images/cheeseburger.jpg",
         "items": [
           {
             "name": "Nuggets",

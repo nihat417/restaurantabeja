@@ -1,31 +1,35 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+"use client"
+import { useRouter } from 'next/navigation';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import menudatas from '../datas/menu.json';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleCategoryClick = (categoryId: number) => {
+    router.push(`/category/${categoryId}`);
+  };
+
   return (
     <main className="flex flex-wrap justify-center gap-4 bg-[#FCFCFC] p-4">
-
-      {/* Card Component */}
-      <Card className="bg-black text-white w-80 m-auto">
-        <CardHeader className="p-0">
-          <img
-            src="https://cdn.vectorstock.com/i/1000v/26/58/design-menu-fast-food-vector-11812658.jpg"
-            alt="Card Image"
-            className="w-full h-48 object-cover"
-          />
-        </CardHeader>
-        <CardContent className="my-4">
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardContent>
-      </Card>
-      
+      {menudatas.fastFoodCategories.map((category) => (
+        <Card
+          key={category.id}
+          className="bg-[#FFF] text-black w-80 m-auto border border-transparent hover:border-[#97D4D4] hover:border-[2px] transition-colors duration-200"
+          onClick={() => handleCategoryClick(category.id)}>
+          <CardHeader className="p-0">
+            <img
+              src={category.image}
+              alt={category.category}
+              className="w-full h-48 object-cover rounded-sm"
+            />
+          </CardHeader>
+          <CardContent className="my-4">
+            <CardTitle>{category.category}</CardTitle>
+            <CardDescription>Explore our {category.category} options</CardDescription>
+          </CardContent>
+        </Card>
+      ))}
     </main>
   );
 }
