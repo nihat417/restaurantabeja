@@ -3,7 +3,7 @@
       {
         "id": 1,
         "category": "Burgers",
-        "image": "https://example.com/images/cheeseburger.jpg",
+        "image": "https://kobrin.slivki.by/znijki-media/w1180_728/default/1009921/1653577316_burger.jpg",
         "items": [
           {
             "name": "Cheeseburger",
@@ -35,7 +35,7 @@
       {
         "id": 2,
         "category": "Pizza",
-        "image": "https://example.com/images/cheeseburger.jpg",
+        "image": "https://avatars.mds.yandex.net/i?id=cf648f91a6d80312306a5a7e148cf843_l-4628448-images-thumbs&n=13",
         "items": [
           {
             "name": "Margherita",
@@ -67,7 +67,7 @@
       {
         "id": 3,
         "category": "Hot Dogs",
-        "image": "https://example.com/images/cheeseburger.jpg",
+        "image": "https://avatars.dzeninfra.ru/get-zen_doc/3484848/pub_63d17149b6bd9c5fad42d554_63d174616051d25be3d2f598/scale_1200",
         "items": [
           {
             "name": "Classic Hot Dog",
@@ -99,7 +99,7 @@
       {
         "id": 4,
         "category": "Tortilla and Tacos",
-        "image": "https://example.com/images/cheeseburger.jpg",
+        "image": "https://www.food-service.ru/upload/iblock/2ca/2ca5541500a3493a6c4dce2d654ff9f2.jpg",
         "items": [
           {
             "name": "Beef Taco",
@@ -131,7 +131,7 @@
       {
         "id": 5,
         "category": "Chicken Dishes",
-        "image": "https://example.com/images/cheeseburger.jpg",
+        "image": "https://static.mk.ru/upload/entities/2024/01/09/12/articles/facebookPicture/5a/42/a4/a0/0b0f8881119fd94beb670afb85511a39.jpg",
         "items": [
           {
             "name": "Nuggets",
