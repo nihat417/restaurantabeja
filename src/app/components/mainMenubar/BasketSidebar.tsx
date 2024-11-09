@@ -15,26 +15,46 @@
   export default function BasketSidebar({ children }: { children: React.ReactNode }) {
     const [selectedButton, setSelectedButton] = useState<string | null>(null);
     const [isBasketOpen, setIsBasketOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleButtonClick = (buttonId: string) => {
       setSelectedButton(buttonId);
     };
 
     const toggleBasket = () => {
-      setIsBasketOpen(!isBasketOpen);
+      setIsBasketOpen(!isBasketOpen); 
     };
+
+    const toggleMenu = () =>{
+      setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = (event: React.MouseEvent) => {
+      if (event.target === event.currentTarget) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    useEffect(() => {
+      if (isMenuOpen) 
+        document.body.style.overflow = 'hidden';
+      else 
+        document.body.style.overflow = 'auto';
+      
+      return () => {
+        document.body.style.overflow = 'auto';
+      };
+    }, [isMenuOpen]);
 
     return (
       <>
-        <div
-          className={`fixed top-0 left-0 h-full z-20 bg-[#1A1A1A] text-white transition-all duration-300 transform ${
-            isBasketOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          } ${isBasketOpen ? "lg:w-[35%] w-full" : "w-0"}`}>
+        <div className={`fixed top-0 left-0 h-full z-20 bg-[#1A1A1A] text-white transition-all duration-300 transform 
+            ${isBasketOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+            ${isBasketOpen ? "lg:w-[35%] w-full" : "w-0"}`}>
           <div className="p-4 flex justify-center  h-full">
-
-            <Tabs defaultValue="account" className="my-[50px] w-[600px] sm:w-[400px]">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="account">New</TabsTrigger>
+          <Tabs defaultValue="account" className={`my-[50px] w-[600px] sm:w-[400px] `}>
+              <TabsList className={`grid w-full grid-cols-2 `}>
+                <TabsTrigger value="account" >New</TabsTrigger>
                 <TabsTrigger value="password">Waited</TabsTrigger>
               </TabsList>
               <TabsContent value="account">
@@ -164,7 +184,31 @@
           {children}
         </div>
 
-        <MainMenuBar onBasketClick={toggleBasket} />
+        <div
+        className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-opacity duration-300 z-10 ${
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={closeMenu} 
+      />
+
+      {/* Menu */}
+      <div className={`fixed top-0 bottom-0 right-0 rounded-[10px] bg-gray-800 text-white p-6 transition-transform duration-300 transform   ${
+          isMenuOpen ? "translate-x-0 w-full sm:w-64 md:m-[20px]" : "translate-x-full"
+        } z-20`}>
+        <h2 className="text-2xl mb-4">Menu</h2>
+        <ul>
+          <li className="mb-2 cursor-pointer">Home</li>
+          <li className="mb-2 cursor-pointer">About</li>
+          <li className="mb-2 cursor-pointer">Services</li>
+          <li className="mb-2 cursor-pointer">Contact</li>
+        </ul>
+      </div>
+
+
+      {isMenuOpen ? 
+      '' :
+        <MainMenuBar onBasketClick={toggleBasket} onMenuClick={toggleMenu} />
+      }
       </>
     );
   }
