@@ -62,6 +62,32 @@ body {
   }
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #2c2c2c; 
+  border-radius: 4px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #97D4D4; 
+  border-radius: 4px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #75A6A6; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none; 
+}
+
+.custom-scrollbar {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border;

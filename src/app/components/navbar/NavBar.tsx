@@ -20,7 +20,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <header className="flex flex-wrap justify-center p-[10px]">
+    <header className="flex flex-wrap justify-center my-[10px] p-[10px]">
       <h4 className="text-white">Serhat Ercan</h4>
       <h4 className="text-[#B3A6A2] ml-[10px]">{date}</h4>
       <h4 className="text-[#B3A6A2] ml-[10px]">{time}</h4>
