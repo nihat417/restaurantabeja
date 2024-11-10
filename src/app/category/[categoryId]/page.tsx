@@ -4,7 +4,7 @@ if (typeof window !== 'undefined') {
   console.error = () => {};
 }
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import menudatas from '../../../datas/menu.json';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
