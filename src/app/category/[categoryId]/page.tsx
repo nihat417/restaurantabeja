@@ -26,6 +26,7 @@ export default function CategoryPage() {
   const { categoryId } = useParams() as { categoryId: string };
   const [category, setCategory] = useState<Category | null>(null);
   const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   useEffect(() => {
     if (categoryId) {
@@ -58,6 +59,14 @@ export default function CategoryPage() {
     }));
   };
 
+  const toggleSelectItem = (itemName: string) => {
+    setSelectedItems((prevSelectedItems) =>
+      prevSelectedItems.includes(itemName)
+        ? prevSelectedItems.filter((item) => item !== itemName)
+        : [...prevSelectedItems, itemName]
+    );
+  };
+
   if (!category) {
     return <p>Loading...</p>;
   }
@@ -77,7 +86,13 @@ export default function CategoryPage() {
       </Card>
 
       {category.items.map((item) => (
-        <Card key={item.name} className="bg-[#FFF] text-black w-80 m-auto border-[2px] border-transparent md:m-[20px] hover:border-[#97D4D4] hover:border-[2px] transition-colors duration-200">
+        <Card
+          key={item.name}
+          className={`bg-[#FFF] text-black w-80 m-auto border-[2px] ${
+            selectedItems.includes(item.name) ? 'border-[#97D4D4] border-[4px]' : 'border-transparent'
+          } md:m-[20px] hover:border-[#97D4D4] hover:border-[2px] transition-colors duration-200 cursor-pointer`}
+          onClick={() => toggleSelectItem(item.name)}
+        >
           <CardHeader className="p-0">
             <img
               src={item.image}
@@ -96,7 +111,7 @@ export default function CategoryPage() {
                   ${item.price}
                 </motion.div>
               </div>
-              <div className="flex  items-center mt-2 space-x-3">
+              <div className="flex items-center mt-2 space-x-3">
                 <button onClick={() => decrement(item.name)} className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition">
                   -
                 </button>
