@@ -4,6 +4,7 @@ import NavBar from "./components/navbar/NavBar";
 import BasketSidebar from "../app/components/mainMenubar/BasketSidebar";
 import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
+import ScrollableContainer from "./components/mainComponents/ScrollableContainer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,14 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-[#000] antialiased flex flex-col h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-[#000] antialiased flex flex-col h-screen `}>
         <div className="z-10">
           <NavBar />
         </div>
 
         <CartProvider>
           <BasketSidebar>
+            <ScrollableContainer>
             {children}
+
+            </ScrollableContainer>
           </BasketSidebar>
         </CartProvider>
       </body>
