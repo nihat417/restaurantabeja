@@ -1,6 +1,10 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+if (typeof window !== 'undefined') {
+  console.error = () => {};
+}
+
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import menudatas from '../../../datas/menu.json';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,8 +31,7 @@ export default function CategoryPage() {
   const { categoryId } = useParams() as { categoryId: string };
   const [category, setCategory] = useState<Category | null>(null);
   const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
-  const { addItem, removeItem, selectedItems: cartItems } = useCart();
+  const { addItem, removeItem, selectedItems: cartItems, updateItemQuantity } = useCart();
 
   useEffect(() => {
     if (categoryId) {
@@ -47,31 +50,43 @@ export default function CategoryPage() {
     }
   }, [categoryId]);
 
+  
+
   const increment = (itemName: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [itemName]: prevQuantities[itemName] + 1,
-    }));
+    setQuantities((prevQuantities) => {
+      const updatedQuantities = {
+        ...prevQuantities,
+        [itemName]: prevQuantities[itemName] + 1,
+      };
+      const updatedItem = category?.items.find(item => item.name === itemName);
+      if (updatedItem) {
+        updateItemQuantity(updatedItem.name, updatedQuantities[itemName]);
+      }
+      return updatedQuantities;
+    });
   };
 
   const decrement = (itemName: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [itemName]: Math.max(prevQuantities[itemName] - 1, 1),
-    }));
+    setQuantities((prevQuantities) => {
+      const updatedQuantities = {
+        ...prevQuantities,
+        [itemName]: Math.max(prevQuantities[itemName] - 1, 1),
+      };
+      const updatedItem = category?.items.find(item => item.name === itemName);
+      if (updatedItem) {
+        updateItemQuantity(updatedItem.name, updatedQuantities[itemName]);
+      }
+      return updatedQuantities;
+    });
   };
 
   const toggleSelectItem = (item: MenuItem) => {
-    if (selectedItems.includes(item.name)) {
+    if (cartItems.some(cartItem => cartItem.name === item.name)) {
       removeItem(item.name);
-      setSelectedItems((prevSelectedItems) =>
-        prevSelectedItems.filter((selectedItem) => selectedItem !== item.name)
-      );
     } else {
       addItem({ ...item, quantity: quantities[item.name] });
-      setSelectedItems((prevSelectedItems) => [...prevSelectedItems, item.name]);
     }
   };
 
@@ -95,9 +110,9 @@ export default function CategoryPage() {
 
       {category.items.map((item) => (
         <Card key={item.name} className={`bg-[#FFF] text-black w-80 m-auto border-[2px] 
-            ${cartItems.includes(item.name) ? 'border-[#97D4D4] border-[4px]' : 'border-transparent'}
-            md:m-[20px] hover:border-[#97D4D4] hover:border-[2px] transition-colors duration-200 cursor-pointer`}
-            onClick={() => toggleSelectItem(item)}>
+          ${cartItems.some(cartItem => cartItem.name === item.name) ? 'border-[#97D4D4] border-[4px]' : 'border-transparent'}
+          md:m-[20px] hover:border-[#97D4D4] hover:border-[2px] transition-colors duration-200 cursor-pointer`}
+          onClick={() => toggleSelectItem(item)}>
           <CardHeader className="p-0">
             <img src={item.image} alt={item.name} className="w-full h-48 object-cover rounded-sm"/>
           </CardHeader>
@@ -115,7 +130,7 @@ export default function CategoryPage() {
               </div>
               <div className="flex items-center mt-2 space-x-3">
                 <button onClick={(e) => decrement(item.name, e)} 
-                className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition">
+                  className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition">
                   -
                 </button>
                 <motion.span key={quantities[item.name]}

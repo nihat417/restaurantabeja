@@ -11,6 +11,7 @@ interface CartContextType {
   selectedItems: MenuItem[];
   addItem: (item: MenuItem) => void;
   removeItem: (itemName: string) => void;
+  updateItemQuantity: (itemName: string, newQuantity: number) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -22,12 +23,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setSelectedItems((prevItems) => {
       const existingItem = prevItems.find((i) => i.name === item.name);
       if (existingItem) {
-        // Если элемент уже есть в корзине, увеличиваем его количество
         return prevItems.map((i) =>
           i.name === item.name ? { ...i, quantity: i.quantity + item.quantity } : i
         );
       }
-      // Если элемент не найден, добавляем новый товар
       return [...prevItems, item];
     });
   };
@@ -36,8 +35,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setSelectedItems((prevItems) => prevItems.filter((i) => i.name !== itemName));
   };
 
+  const updateItemQuantity = (itemName: string, newQuantity: number) => {
+    setSelectedItems((prevItems) =>
+      prevItems.map((i) =>
+        i.name === itemName ? { ...i, quantity: newQuantity } : i
+      )
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ selectedItems, addItem, removeItem }}>
+    <CartContext.Provider value={{ selectedItems, addItem, removeItem, updateItemQuantity }}>
       {children}
     </CartContext.Provider>
   );
@@ -46,7 +53,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error("error");
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
 };
