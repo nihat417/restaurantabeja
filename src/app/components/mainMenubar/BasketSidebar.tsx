@@ -3,12 +3,13 @@
   import { useState, useEffect } from "react";
   import MainMenuBar from "../mainMenubar/MainMenuBar";
   import { Button } from "@/components/ui/button"
-  import {Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from "@/components/ui/card"
+  import {Card,CardContent,CardFooter} from "@/components/ui/card"
   import { Label } from "@/components/ui/label"
   import {Tabs,TabsContent,TabsList,TabsTrigger,} from "@/components/ui/tabs"
   import { CiCreditCard1,CiGift  } from "react-icons/ci";
   import { FaRegMoneyBillAlt } from "react-icons/fa";
   import { IoPerson } from "react-icons/io5";
+  import { useCart } from "@/contexts/CartContext";
 
 
 
@@ -16,6 +17,7 @@
     const [selectedButton, setSelectedButton] = useState<string | null>(null);
     const [isBasketOpen, setIsBasketOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { selectedItems, removeItem } = useCart();
 
     const handleButtonClick = (buttonId: string) => {
       setSelectedButton(buttonId);
@@ -60,49 +62,16 @@
               <TabsContent value="account">
                 <Card>
                   <CardContent className="my-[40px] max-h-[200px] space-y-2 overflow-y-auto custom-scrollbar">
-                    <div className="flex flex-row justify-between  space-y-1">
-                      <div className="flex flex-row">
-                        <Label className="mx-[10px] text-[16px]">1</Label>
-                        <Label className="mx-[10px] font-bold text-[16px]">Cheeese Burger</Label>
+                    {selectedItems.map((item, index) => (
+                      <div key={index} className="flex flex-row justify-between space-y-1">
+                        <div className="flex flex-row">
+                          <Label className="mx-[10px] text-[16px]">{item.quantity}</Label>
+                          <Label className="mx-[10px] font-bold text-[16px]">{item.name}</Label>
+                        </div>
+                        <Label className="text-[16px]">${item.price * item.quantity}</Label>
+                        <button onClick={() => removeItem(item.name)}>Remove</button>
                       </div>
-                      <Label className="text-[16px]">50$</Label>
-                    </div>
-                    <div className="flex flex-row justify-between  space-y-1">
-                      <div className="flex flex-row">
-                        <Label className="mx-[10px] text-[16px]">1</Label>
-                        <Label className="mx-[10px] font-bold text-[16px]">Cheeese Burger</Label>
-                      </div>
-                      <Label className="text-[16px]">50$</Label>
-                    </div>
-                    <div className="flex flex-row justify-between  space-y-1">
-                      <div className="flex flex-row">
-                        <Label className="mx-[10px] text-[16px]">1</Label>
-                        <Label className="mx-[10px] font-bold text-[16px]">Cheeese Burger</Label>
-                      </div>
-                      <Label className="text-[16px]">50$</Label>
-                    </div>
-                    <div className="flex flex-row justify-between  space-y-1">
-                      <div className="flex flex-row">
-                        <Label className="mx-[10px] text-[16px]">1</Label>
-                        <Label className="mx-[10px] font-bold text-[16px]">Cheeese Burger</Label>
-                      </div>
-                      <Label className="text-[16px]">50$</Label>
-                    </div>
-                    <div className="flex flex-row justify-between  space-y-1">
-                      <div className="flex flex-row">
-                        <Label className="mx-[10px] text-[16px]">1</Label>
-                        <Label className="mx-[10px] font-bold text-[16px]">Cheeese Burger</Label>
-                      </div>
-                      <Label className="text-[16px]">50$</Label>
-                    </div>
-                    <div className="flex flex-row justify-between  space-y-1">
-                      <div className="flex flex-row">
-                        <Label className="mx-[10px] text-[16px]">1</Label>
-                        <Label className="mx-[10px] font-bold text-[16px]">Cheeese Burger</Label>
-                      </div>
-                      <Label className="text-[16px]">50$</Label>
-                    </div>
-                    
+                    ))}
                   </CardContent>
 
                   <div className="flex flex-row justify-between mx-[25px] my-[40px] p-[5px] border-[#000] border-[1px] border-dotted">
@@ -156,23 +125,6 @@
               </TabsContent>
               <TabsContent value="password">
                 <Card>
-                  <CardHeader>
-                    <CardTitle>Password</CardTitle>
-                    <CardDescription>
-                      Change your password here. After saving, you'll be logged out.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="space-y-1">
-                      <Label htmlFor="current">Current password</Label>
-                    </div>
-                    <div className="space-y-1">
-                      <Label htmlFor="new">New password</Label>
-                    </div>
-                  </CardContent>
-                  <CardFooter >
-                    <Button>Save password</Button>
-                  </CardFooter>
                 </Card>
               </TabsContent>
             </Tabs>
@@ -192,9 +144,8 @@
       />
 
       {/* Menu */}
-      <div className={`fixed top-0 bottom-0 right-0 rounded-[10px] bg-gray-800 text-white p-6 transition-transform duration-300 transform   ${
-          isMenuOpen ? "translate-x-0 w-full sm:w-64 md:m-[20px]" : "translate-x-full"
-        } z-20`}>
+      <div className={`fixed top-0 bottom-0 right-0 rounded-[10px] bg-gray-800 text-white p-6 transition-transform duration-300 transform  
+       ${isMenuOpen ? "translate-x-0 w-full sm:w-64 md:m-[20px]" : "translate-x-full"} z-20`}>
         <h2 className="text-2xl mb-4">Menu</h2>
         <ul>
           <li className="mb-2 cursor-pointer">Home</li>

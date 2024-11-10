@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import NavBar from "./components/navbar/NavBar";
 import BasketSidebar from "../app/components/mainMenubar/BasketSidebar";
 import "./globals.css";
+import { CartProvider } from "@/contexts/CartContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,11 @@ export default function RootLayout({
           <NavBar />
         </div>
 
-        <BasketSidebar>{children}</BasketSidebar>
+        <CartProvider>
+          <BasketSidebar>
+            {children}
+          </BasketSidebar>
+        </CartProvider>
       </body>
     </html>
   );
