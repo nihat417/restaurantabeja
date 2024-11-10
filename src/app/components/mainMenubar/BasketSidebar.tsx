@@ -19,6 +19,8 @@
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { selectedItems, removeItem } = useCart();
 
+    const totalAmount = selectedItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
     const handleButtonClick = (buttonId: string) => {
       setSelectedButton(buttonId);
     };
@@ -76,7 +78,7 @@
 
                   <div className="flex flex-row justify-between mx-[25px] my-[40px] p-[5px] border-[#000] border-[1px] border-dotted">
                     <h4 className="ml-[10px] font-bold text-[18px] text-black">Total</h4>
-                    <h4 className="text-[18px] font-bold text-black">200$</h4>
+                    <h4 className="text-[18px] font-bold text-black">{totalAmount.toFixed(2)}$</h4>
                   </div>
 
                   <div className="flex flex-row justify-center gap-6 my-[20px]">
