@@ -8,27 +8,62 @@
           {
             "name": "Cheeseburger",
             "price": 2.99,
-            "image": "https://example.com/images/cheeseburger.jpg"
+            "image": "https://fort.crimea.com/catering/uploads/fotos/f5249fcd-fe6d-11ea-bb1e-bc5ff44a223e_1.jpg"
           },
           {
             "name": "Hamburger",
             "price": 2.49,
-            "image": "https://example.com/images/hamburger.jpg"
+            "image": "https://kobrin.slivki.by/znijki-media/w1180_728/default/1009921/1653577316_burger.jpg"
           },
           {
             "name": "Chicken Burger",
             "price": 3.49,
-            "image": "https://example.com/images/chickenburger.jpg"
+            "image": "https://bestfoodmel.ru/images/cms/thumbs/5ea04cc151ac4cf20679e476db6a55c2f7da87f9/california_crab_auto_auto.jpg"
           },
           {
             "name": "Double Burger",
             "price": 4.99,
-            "image": "https://example.com/images/doubleburger.jpg"
+            "image": "https://avatars.mds.yandex.net/i?id=6cdc6302076c990daf0ef3b2878601e4_l-9149794-images-thumbs&n=13"
           },
           {
             "name": "Vegan Burger",
             "price": 3.99,
-            "image": "https://example.com/images/veganburger.jpg"
+            "image": "https://www.vvsupremo.com/wp-content/uploads/2016/09/N-Broccoli-Hamburguer_900x570.jpg"
+          },
+          {
+            "name": "BBQ Bacon Burger",
+            "price": 5.99,
+            "image": "https://thumbs.dreamstime.com/b/bbq-burger-bacon-onions-dark-beer-sauce-71619920.jpg"
+          },
+          {
+            "name": "Mushroom Swiss Burger",
+            "price": 4.79,
+            "image": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_1200,q_auto,fl_lossy,dpr_auto,c_fill,f_auto,h_800,g_auto/u7n7lo4xgfcnx4raj3iw"
+          },
+          {
+            "name": "Spicy Jalapeño Burger",
+            "price": 4.29,
+            "image": "https://avatars.mds.yandex.net/i?id=7388dc4060ed06dabe96ac3a5665b3c8_l-8249876-images-thumbs&n=13"
+          },
+          {
+            "name": "Avocado Burger",
+            "price": 5.49,
+            "image": "https://i.pinimg.com/originals/f2/2e/17/f22e17e65d1f33b95ba31727bff24e34.jpg"
+          },
+          {
+            "name": "Classic Beef Burger",
+            "price": 3.89,
+            "image": "https://templates.envytheme.com/handout/default/assets/img/overview/image2.jpg"
+          },
+          {
+            "name": "Egg & Cheese Burger",
+            "price": 4.59,
+            "image": "https://i.pinimg.com/736x/07/80/4c/07804c9addd1e0156f0ec526d0ab1efd.jpg"
+          },
+          {
+            "name": "Fish Burger",
+            "price": 3.99,
+            "image": "https://static-actual-production.chibbis.ru/bac941b97b0f83bf057b3da29dbf2c79.jpeg"
           }
         ]
       },
@@ -40,27 +75,27 @@
           {
             "name": "Margherita",
             "price": 5.99,
-            "image": "https://example.com/images/margherita.jpg"
+            "image": "https://gagaru.club/uploads/posts/2023-05/1685539272_gagaru-club-p-pitstsa-s-sirom-pinterest-56.jpg"
           },
           {
             "name": "Pepperoni",
             "price": 6.49,
-            "image": "https://example.com/images/pepperoni.jpg"
+            "image": "https://xinkaloff.com/d/mp.jpg"
           },
           {
             "name": "Four Cheese",
             "price": 6.99,
-            "image": "https://example.com/images/fourcheese.jpg"
+            "image": "https://musafir-edanadom.ru/wp-content/uploads/2018/03/vkusnaya-piczcza-4-syra.jpg"
           },
           {
             "name": "Hawaiian",
             "price": 6.49,
-            "image": "https://example.com/images/hawaiian.jpg"
+            "image": "https://api.vip.foodnetwork.ca/wp-content/uploads/2021/10/hawaiian-pizza.jpg"
           },
           {
             "name": "Vegetarian",
             "price": 5.99,
-            "image": "https://example.com/images/vegetarian.jpg"
+            "image": "https://avatars.mds.yandex.net/i?id=3382bc542b42359ddcd271fc77aa1293_l-5440258-images-thumbs&n=13"
           }
         ]
       },
@@ -72,27 +107,27 @@
           {
             "name": "Classic Hot Dog",
             "price": 1.99,
-            "image": "https://example.com/images/classichotdog.jpg"
+            "image": "https://pic.rutubelist.ru/video/0e/21/0e2185f7c792ab6e664db95213eb8189.jpg"
           },
           {
             "name": "Chili Dog",
             "price": 2.49,
-            "image": "https://example.com/images/chilidog.jpg"
+            "image": "https://i.pinimg.com/originals/81/26/40/812640be3fd51e9f50f88d9e44561856.jpg"
           },
           {
             "name": "Cheese Dog",
             "price": 2.29,
-            "image": "https://example.com/images/cheesedog.jpg"
+            "image": "https://i.pinimg.com/originals/fa/1a/c9/fa1ac9a65ecaca5c908a68c974dc22f2.jpg"
           },
           {
             "name": "Corn Dog",
             "price": 1.79,
-            "image": "https://example.com/images/corndog.jpg"
+            "image": "https://i.ytimg.com/vi/imi8YDvyWn0/maxresdefault.jpg"
           },
           {
             "name": "Bacon Hot Dog",
             "price": 2.99,
-            "image": "https://example.com/images/baconhotdog.jpg"
+            "image": "https://s9.travelask.ru/system/images/files/001/460/477/wysiwyg_jpg/sig-4517161.BABBLE_DOGS_LARGE.jpg?1614856259"
           }
         ]
       },
@@ -104,27 +139,27 @@
           {
             "name": "Beef Taco",
             "price": 3.49,
-            "image": "https://example.com/images/beeftaco.jpg"
+            "image": "https://avatars.mds.yandex.net/i?id=cd7853ab68b1c451fb167cc7562b67b5_l-5236381-images-thumbs&n=13"
           },
           {
             "name": "Chicken Taco",
             "price": 3.29,
-            "image": "https://example.com/images/chickentaco.jpg"
+            "image": "https://i.pinimg.com/originals/09/11/42/0911421b37c2febaadc84ed490af8c68.jpg"
           },
           {
             "name": "Quesadilla",
             "price": 3.99,
-            "image": "https://example.com/images/quesadilla.jpg"
+            "image": "https://avatars.dzeninfra.ru/get-zen_doc/5288931/pub_61b3cd2f230f722b2433f888_61b3cf71c24b4f6d65f4e279/scale_1200"
           },
           {
             "name": "Burrito",
             "price": 4.49,
-            "image": "https://example.com/images/burrito.jpg"
+            "image": "https://cdn.culture.ru/images/1cdb8984-a4d3-5463-aed2-2df145f7d200"
           },
           {
             "name": "Enchilada",
             "price": 4.29,
-            "image": "https://example.com/images/enchilada.jpg"
+            "image": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_65a8438125e40e47070ae0bb_65a843a559823b34db123348/scale_1200"
           }
         ]
       },
@@ -136,27 +171,27 @@
           {
             "name": "Nuggets",
             "price": 2.49,
-            "image": "https://example.com/images/nuggets.jpg"
+            "image": "https://www.thespruceeats.com/thmb/7fVYT-3O22mM9GVs4F-yPbGAfps=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-nuggets-with-ketchup-537703317-5a938584119fa80037581cc2.jpg"
           },
           {
             "name": "Wings",
             "price": 3.99,
-            "image": "https://example.com/images/wings.jpg"
+            "image": "https://avatars.mds.yandex.net/i?id=73d2e4bb88f8b20117ca3e4c8cac5f1d_l-10256374-images-thumbs&n=13https://avatars.mds.yandex.net/i?id=73d2e4bb88f8b20117ca3e4c8cac5f1d_l-10256374-images-thumbs&n=13"
           },
           {
             "name": "Strips",
             "price": 3.79,
-            "image": "https://example.com/images/strips.jpg"
+            "image": "https://www.thespruceeats.com/thmb/c86z_0bK4zKAU70EdvqFeHftXpE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/spicy-fried-chicken-strips-3056880-hero-01-e5bad43e0d3441749f17c1b98b5486c2.jpg"
           },
           {
             "name": "Chicken Sandwich",
             "price": 4.29,
-            "image": "https://example.com/images/chickensandwich.jpg"
+            "image": "https://static1-repo.aif.ru/1/c2/481304/4e19f43e69f4cfe44cf2ea855319f6ee.jpg"
           },
           {
             "name": "Fried Chicken Legs",
             "price": 3.49,
-            "image": "https://example.com/images/friedchickenlegs.jpg"
+            "image": "https://i.pinimg.com/originals/fd/51/92/fd5192194d5d3f277517a41fc2cc9463.jpg"
           }
         ]
       },
@@ -168,27 +203,27 @@
           {
             "name": "Spaghetti Bolognese",
             "price": 5.99,
-            "image": "https://example.com/images/spaghettibolognese.jpg"
+            "image": "https://avatars.mds.yandex.net/i?id=7bcd7f43b31f843c7f043e2e4bb4d619_l-5179924-images-thumbs&n=13"
           },
           {
             "name": "Fettuccine Alfredo",
             "price": 6.49,
-            "image": "https://example.com/images/fettuccinealfredo.jpg"
+            "image": "https://i.pinimg.com/originals/57/63/e2/5763e28ca0d730d003f70e725466254f.png"
           },
           {
             "name": "Lasagna",
             "price": 7.99,
-            "image": "https://example.com/images/lasagna.jpg"
+            "image": "https://www.chefmarket.ru/blog/wp-content/uploads/2021/01/a-piece-of-chicken--2000x1200.jpg"
           },
           {
             "name": "Penne Arrabbiata",
             "price": 5.79,
-            "image": "https://example.com/images/pennearrabbiata.jpg"
+            "image": "https://media.leverans.ru/product_images_inactive/moscow/shou-restoran-lalalend/%D0%9F%D0%B5%D0%BD%D0%B5_%D0%B0%D1%80%D0%B0%D0%B1%D1%8C%D1%8F%D1%82%D0%B0.jpg"
           },
           {
             "name": "Mac and Cheese",
             "price": 4.99,
-            "image": "https://example.com/images/macandcheese.jpg"
+            "image": "https://massystorestt.com/wp-content/uploads/2014/10/STOVE-TOP-MAC-AND-CHEESE.jpg"
           }
         ]
       }
