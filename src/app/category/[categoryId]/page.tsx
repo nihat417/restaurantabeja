@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import goBackImg from "../../../assets/images/gobackImage.jpeg";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/contexts/CartContext';  
 
 interface MenuItem {
   name: string;
@@ -28,7 +28,7 @@ export default function CategoryPage() {
   const [category, setCategory] = useState<Category | null>(null);
   const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
-  const { addItem } = useCart(); // добавляем addItem из useCart
+  const { addItem, removeItem, selectedItems: cartItems } = useCart();
 
   useEffect(() => {
     if (categoryId) {
@@ -64,12 +64,15 @@ export default function CategoryPage() {
   };
 
   const toggleSelectItem = (item: MenuItem) => {
-    addItem({ ...item, quantity: quantities[item.name] }); 
-    setSelectedItems((prevSelectedItems) =>
-      prevSelectedItems.includes(item.name)
-        ? prevSelectedItems.filter((selectedItem) => selectedItem !== item.name)
-        : [...prevSelectedItems, item.name]
-    );
+    if (selectedItems.includes(item.name)) {
+      removeItem(item.name);
+      setSelectedItems((prevSelectedItems) =>
+        prevSelectedItems.filter((selectedItem) => selectedItem !== item.name)
+      );
+    } else {
+      addItem({ ...item, quantity: quantities[item.name] });
+      setSelectedItems((prevSelectedItems) => [...prevSelectedItems, item.name]);
+    }
   };
 
   if (!category) {
@@ -92,7 +95,7 @@ export default function CategoryPage() {
 
       {category.items.map((item) => (
         <Card key={item.name} className={`bg-[#FFF] text-black w-80 m-auto border-[2px] 
-            ${selectedItems.includes(item.name) ? 'border-[#97D4D4] border-[4px]' : 'border-transparent'}
+            ${cartItems.includes(item.name) ? 'border-[#97D4D4] border-[4px]' : 'border-transparent'}
             md:m-[20px] hover:border-[#97D4D4] hover:border-[2px] transition-colors duration-200 cursor-pointer`}
             onClick={() => toggleSelectItem(item)}>
           <CardHeader className="p-0">

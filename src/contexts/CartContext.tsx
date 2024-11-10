@@ -22,10 +22,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setSelectedItems((prevItems) => {
       const existingItem = prevItems.find((i) => i.name === item.name);
       if (existingItem) {
+        // Если элемент уже есть в корзине, увеличиваем его количество
         return prevItems.map((i) =>
           i.name === item.name ? { ...i, quantity: i.quantity + item.quantity } : i
         );
       }
+      // Если элемент не найден, добавляем новый товар
       return [...prevItems, item];
     });
   };
